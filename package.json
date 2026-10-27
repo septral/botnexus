@@ -1,0 +1,26 @@
+{
+  "name": "sanatorio-nexus-bot",
+  "version": "1.3.0",
+  "private": true,
+  "description": "Bot modular para Discord com configuração interativa, tickets, economia e moderação.",
+  "type": "module",
+  "engines": {
+    "node": ">=24.17.0"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/index.js",
+    "dev": "node --watch --env-file-if-exists=.env src/index.js",
+    "deploy": "node --env-file-if-exists=.env scripts/deploy.js",
+    "commands": "node scripts/deploy.js --dry-run",
+    "doctor": "node --env-file-if-exists=.env scripts/doctor.js",
+    "convite": "node --env-file-if-exists=.env scripts/invite.js",
+    "test": "node --test test/*.test.js",
+    "check": "node scripts/check.js",
+    "verify": "npm run check && npm test"
+  },
+  "dependencies": {
+    "@discordjs/voice": "^0.19.2",
+    "@napi-rs/canvas": "^1.0.13",
+    "discord.js": "14.27.0"
+  }
+}
